@@ -6,8 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Progress Bar component</title>
 </head>
-<body>
-    <progress-bar></progress-bar>
-</body>
 <script src="progressBarComponent.js"></script>
+<style>
+       html,body {
+        display: grid;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        place-items: center;
+        background: #dde6f0;
+    }
+
+   .root {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 800px;
+ 
+   }
+       
+</style>
+<body>
+    <h3>Taxa de ocupação de eventos </h3>
+    <div class="root">
+            <progress-bar name= "evento 1"></progress-bar> 
+            <progress-bar></progress-bar>
+            <progress-bar></progress-bar>
+            <progress-bar></progress-bar>
+            <progress-bar></progress-bar>
+            <progress-bar></progress-bar>
+    
+    </div>    
+</body>
 </html>
