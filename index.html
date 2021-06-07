@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Progress Bar component</title>
 </head>
-<script src="progressBarComponent.js"></script>
 <style>
        html,body {
         display: grid;
@@ -30,13 +29,14 @@
 <body>
     <h3>Taxa de ocupação de eventos </h3>
     <div class="root">
-            <progress-bar name= "evento 1"></progress-bar> 
-            <progress-bar></progress-bar>
-            <progress-bar></progress-bar>
-            <progress-bar></progress-bar>
-            <progress-bar></progress-bar>
-            <progress-bar></progress-bar>
-    
+        <progress-bar eventName="evento do palhaço 1" percentOfLoad='10'></progress-bar>
+        <progress-bar eventName="evento do palhaço 2" percentOfLoad='20'></progress-bar>
+        <progress-bar eventName="evento do palhaço 3" percentOfLoad='55'></progress-bar>
+        <progress-bar eventName="evento do palhaço 4" percentOfLoad='50'></progress-bar>
+        <progress-bar eventName="evento do palhaço 5" percentOfLoad='25'></progress-bar>
+        <progress-bar eventName="evento do palhaço 6" percentOfLoad='80'></progress-bar> 
+        
     </div>    
+    <script src="progressBarComponent.js"></script>
 </body>
 </html>
