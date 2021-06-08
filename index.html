@@ -7,6 +7,11 @@
     <title>Progress Bar component</title>
 </head>
 <style>
+    @font-face {
+     font-family: "CARTOONFONT";
+     src: url(./fonts/Whale.ttf) format("truetype");
+    }
+
        html,body {
         display: grid;
         height: 100%;
@@ -14,6 +19,18 @@
         text-align: center;
         place-items: center; 
         background: #fff;
+        background-image: url(./images/pawpatrol2.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        font-family: 'CARTOONFONT';
+        font-size: 2rem;
+        color: wheat;
+        text-shadow: -4px 0 red, 0 4px black, 4px 0 yellow, 0 -4px yellow;
+        letter-spacing: normal;
+    }
+    
+    html,body h3 {
+     letter-spacing: 0.3rem;
     }
 
    .progress-bar-container {
@@ -24,19 +41,38 @@
       justify-content: space-between;
       flex-wrap: wrap;
       max-width: 600px;
-      background: #dde6f0;     
+      box-shadow: 0 0 1rem 0.8rem rgba(0, 0, 0, 0.445);
+      position: relative;
+      background: inherit;
+      overflow: hidden;
+      z-index: 1;
+   }
+
+   .progress-bar-container::before {
+       content: "";
+       position: absolute;
+       background: inherit;
+       top: 0;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+       border-radius: 10%;
+       filter: blur(8px);
+       margin: -3px;
+       z-index: -1;
    }
        
 </style>
 <body>
-    <h3>Taxa de ocupação de eventos </h3>
+    <h3>Taxa de  ocupação  de  eventos </h3>
     <div class="progress-bar-container">
-        <progress-bar eventName="evento do palhaço 1" percentOfLoad='10'></progress-bar>
-        <progress-bar eventName="evento do palhaço 2" percentOfLoad='20'></progress-bar>
-        <progress-bar eventName="evento do palhaço 3" percentOfLoad='55'></progress-bar>
-        <progress-bar eventName="evento do palhaço 4" percentOfLoad='50'></progress-bar>
-        <progress-bar eventName="evento do palhaço 5" percentOfLoad='25'></progress-bar>
-        <progress-bar eventName="evento do palhaço 6" percentOfLoad='80'></progress-bar> 
+        <progress-bar eventName="evento do palhaço dia -  18 de julho" percentOfLoad='10'></progress-bar>
+        <progress-bar eventName="evento do palhaço dia - 15 de Agosto"percentOfLoad='20'></progress-bar>
+        <progress-bar eventName="evento do palhaço dia - 22 de setembro" percentOfLoad='55'></progress-bar>
+        <progress-bar eventName="evento do palhaço dia - 15 de Outubro" percentOfLoad='50'></progress-bar>
+        <progress-bar eventName="evento do palhaço dia - 22 de Outubro" percentOfLoad='25'></progress-bar>
+        <progress-bar eventName="evento do palhaço dia - 25 de Dezembro" percentOfLoad='80'></progress-bar> 
         
     </div>    
     <script src="progressBarComponent.js"></script>

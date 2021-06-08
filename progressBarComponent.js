@@ -6,7 +6,12 @@ template.innerHTML = `
         padding: 0;
         box-sizing: border-box;
         font-family: 'Poppins', sans-serif;
-    }
+        font-size: 0.5rem;
+        color: black;
+        text-shadow: -0.5px 0 red, 0 0.5px red, 0.5px 0 red, 0 -0.5px red;
+        z-index:3;
+
+      }
 
     html,body {
         display: grid;
@@ -14,6 +19,9 @@ template.innerHTML = `
         text-align: center;
         place-items: center;
         background: #dde6f0;
+        z-index:3;
+
+
     }
 
     .circular {
@@ -22,6 +30,9 @@ template.innerHTML = `
         position: relative;
         transform: scale(2);
         margin: 58px;
+        margin-bottom: 120px;
+        z-index:3;
+
     }
 
     .circular .inner {
@@ -32,7 +43,7 @@ template.innerHTML = `
         height: 80px;
         width: 80px;
         margin:  -40px 0 0 -40px;
-        background: #dde6f0;
+        background: #006280;
         border-radius: 100%;
         box-shadow: 0 1px 0 rgba(0,0,0,0.2);
     }
@@ -54,7 +65,9 @@ template.innerHTML = `
         z-index: 10;
         font-size: 18px;
         font-weight: 500;
-        color: #4158d0 ;
+        color: wheat ;
+        text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+
             }
 
     .circle .bar .progress {
@@ -89,12 +102,18 @@ template.innerHTML = `
         animation: right 4s linear both;
         animation-delay: 4s;
     }
+    .eventTitle {
+      z-index:10;
+      color:wheat;
+      text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -3px black;
+      font-size:0.49rem;
 
+    }
     @keyframes right {
        
         100% {
             transform: rotate(180deg);
-        }
+        }   
         
     }
 
