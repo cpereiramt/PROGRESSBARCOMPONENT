@@ -3,7 +3,7 @@
 **How to use**
 
 ----------
-1. Clone this project at [repository](https://github.com/cpereiramt/PROGRESSBARCOMPONENT.git) on Github .
+1. Clone this project at this   [repository](https://github.com/cpereiramt/PROGRESSBARCOMPONENT.git) on Github .
 
 2. Copy the Js file *progressBarComponent.js* to your project folder
 3. Import the Js file on a tag script above the close body tag in your html document .
