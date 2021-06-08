@@ -12,23 +12,25 @@
         height: 100%;
         width: 100%;
         text-align: center;
-        place-items: center;
-        background: #dde6f0;
+        place-items: center; 
+        background: #fff;
     }
 
-   .root {
+   .progress-bar-container {
+      padding: 60px;
       display: flex;
       align-items: center;
+      border-radius: 10%;
       justify-content: space-between;
       flex-wrap: wrap;
-      max-width: 800px;
- 
+      max-width: 600px;
+      background: #dde6f0;     
    }
        
 </style>
 <body>
     <h3>Taxa de ocupação de eventos </h3>
-    <div class="root">
+    <div class="progress-bar-container">
         <progress-bar eventName="evento do palhaço 1" percentOfLoad='10'></progress-bar>
         <progress-bar eventName="evento do palhaço 2" percentOfLoad='20'></progress-bar>
         <progress-bar eventName="evento do palhaço 3" percentOfLoad='55'></progress-bar>
