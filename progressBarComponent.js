@@ -131,7 +131,7 @@ class ProgressBar extends HTMLElement {
           setInterval(() => {
               counter+=1;
               if (counter <= percentage) {                
-                    numb.textContent = counter + "%";  
+                    numb.textContent = counter + "% Cheio";  
                                       
                  if (counter <=50) {
                         progressLeft.style.backgroundColor = "green";
