@@ -139,42 +139,57 @@ class ProgressBar extends HTMLElement {
         super();        
         this.attachShadow({ mode: 'open'})
         this.shadowRoot.appendChild(template.content.cloneNode(true))
-        const numb = this.shadowRoot.querySelector('.numb');
         const titleEvent = this.shadowRoot.querySelector('.eventTitle');
         console.log(this.getAttribute('eventName'));
-          titleEvent.textContent = this.getAttribute('eventName');
-          const percentage = this.getAttribute('percentOfLoad');
-          const progressLeft = this.shadowRoot.querySelector('.left .progress');
-          const progressRight = this.shadowRoot.querySelector('.right .progress');
-          let counter = 0;
-          setInterval(() => {
-              counter+=1;
-              if (counter <= percentage) {                
-                    numb.textContent = counter + "% Cheio";  
-                                      
-                 if (counter <=50) {
-                        progressLeft.style.backgroundColor = "green";
-                        progressRight.style.backgroundColor = "green";
-                    } else if(counter > 50 && counter <= 70) {
-                        progressLeft.style.backgroundColor = "yellow";
-                        progressRight.style.backgroundColor = "yellow";
-                    }
-                    else if(counter > 70) {
-                        progressLeft.style.backgroundColor = "red";
-                        progressRight.style.backgroundColor = "red";
-                    }  
-                }
-                else {
-                    progressLeft.style.animationPlayState = "paused";
-                    progressRight.style.animationPlayState = "paused";
-                }                        
-                
-            },80)
-            
-        }
+        titleEvent.textContent = this.getAttribute('eventName');
+        const percentage = this.getAttribute('percentOfLoad');
+        const progressLeft = this.shadowRoot.querySelector('.left .progress');
+        const progressRight = this.shadowRoot.querySelector('.right .progress');
+        this.progressBarAnimation(percentage,progressLeft,progressRight)
         
     }
-//Defining how the custom tag will be named 
-window.customElements.define('progress-bar', ProgressBar);
+    
+    progressBarAnimation(percentage,progressLeft,progressRight) {
+            const numb = this.shadowRoot.querySelector('.numb');
+            let counter = 0;
+            this.setInterval(() => {
+                counter+=1;
+                if (counter <= percentage) {                
+                      numb.textContent = counter + "% Cheio";  
+                                        
+                   if (counter <=50) {
+                          progressLeft.style.backgroundColor = "green";
+                          progressRight.style.backgroundColor = "green";
+                      } else if(counter > 50 && counter <= 70) {
+                          progressLeft.style.backgroundColor = "yellow";
+                          progressRight.style.backgroundColor = "yellow";
+                      }
+                      else if(counter > 70) {
+                          progressLeft.style.backgroundColor = "red";
+                          progressRight.style.backgroundColor = "red";
+                      }  
+                  }
+                  else {
+                      progressLeft.style.animationPlayState = "paused";
+                      progressRight.style.animationPlayState = "paused";
+                  }                        
+                  
+              },80);
+        
+            }
+            
+          ChangeProgressBarInformation(NewPercentage)  {
+            const numb = this.shadowRoot.querySelector('.numb');
+            const progressLeft = this.shadowRoot.querySelector('.left .progress');
+            const progressRight = this.shadowRoot.querySelector('.right .progress');
+          numb.textContent = NewPercentage + "% Cheio";
+          this.progressBarAnimation(NewPercentage,progressLeft,progressRight, NewPercentage);
+         }
 
+         connectedCallback() {
+            this.ChangeProgressBarInformation(30);
+         }
+        }
+        
 
+    window.customElements.define('progress-bar', ProgressBar);
